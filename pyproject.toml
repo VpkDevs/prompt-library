@@ -1,0 +1,15 @@
+[project]
+name = "ai-prompt-library"
+version = "0.1.0"
+description = "A curated prompt catalog with validation and CLI tooling."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "AI Prompt Library Contributors"}]
+
+[project.scripts]
+ai-prompts = "ai_prompt_library.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
