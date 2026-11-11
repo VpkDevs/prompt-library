@@ -1,0 +1,41 @@
+[
+  {
+    "id": "summarize_meeting",
+    "title": "Summarize a Meeting Transcript",
+    "category": "productivity",
+    "description": "Create a crisp meeting summary with decisions, owners, risks, and follow-up actions.",
+    "tags": ["meeting", "summary", "actions", "operations"],
+    "variables": [
+      {"name": "audience", "description": "Who will read the summary.", "example": "executives"},
+      {"name": "transcript", "description": "Raw meeting transcript or notes.", "example": "Alice: ..."}
+    ],
+    "template": "You are an expert operations chief of staff. Summarize the following meeting for {audience}.\n\nReturn:\n1. Executive summary\n2. Decisions made\n3. Action items with owners and due dates\n4. Open questions\n5. Risks or blockers\n\nTranscript:\n{transcript}",
+    "best_practices": ["Keep action items specific and attributable.", "Flag missing owners or dates instead of inventing them."]
+  },
+  {
+    "id": "code_review",
+    "title": "Structured Code Review",
+    "category": "engineering",
+    "description": "Review a code diff for correctness, maintainability, security, and test coverage.",
+    "tags": ["code", "review", "security", "testing"],
+    "variables": [
+      {"name": "language", "description": "Primary programming language or stack.", "example": "Python"},
+      {"name": "diff", "description": "Code diff to review.", "example": "diff --git ..."}
+    ],
+    "template": "Act as a senior {language} reviewer. Review this diff and prioritize findings by severity.\n\nFocus on correctness, edge cases, security, maintainability, and missing tests. Quote only the minimum code needed to identify issues. If there are no blocking issues, say so and suggest optional improvements.\n\nDiff:\n{diff}",
+    "best_practices": ["Separate blocking defects from suggestions.", "Prefer actionable feedback over style-only comments."]
+  },
+  {
+    "id": "customer_interview_synthesis",
+    "title": "Customer Interview Synthesis",
+    "category": "research",
+    "description": "Extract themes, evidence, objections, and product opportunities from customer interviews.",
+    "tags": ["research", "customers", "product", "insights"],
+    "variables": [
+      {"name": "segment", "description": "Customer segment being analyzed.", "example": "mid-market finance teams"},
+      {"name": "notes", "description": "Interview notes or transcript excerpts.", "example": "Participant A said ..."}
+    ],
+    "template": "You are a rigorous product researcher analyzing interviews from {segment}.\n\nUse the notes below to produce:\n- Top recurring needs\n- Jobs to be done\n- Pain points with supporting evidence\n- Buying objections\n- Product opportunities\n- Confidence level and evidence gaps\n\nDo not overgeneralize beyond the provided evidence.\n\nNotes:\n{notes}",
+    "best_practices": ["Tie each insight to evidence.", "Call out low-confidence conclusions explicitly."]
+  }
+]
